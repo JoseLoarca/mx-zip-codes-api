@@ -17,6 +17,23 @@ class ZipCode extends Model
      */
     protected $fillable = ['zip_code'];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'zip_code';
+    }
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['settlements.settlementType'];
+
     ///////////////////
     // Relationships //
     ///////////////////
