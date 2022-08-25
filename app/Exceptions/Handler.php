@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -48,11 +49,17 @@ class Handler extends ExceptionHandler
             //
         });
 
-        // Always return a JSON response for not found exceptions
+        // Always return a JSON response for Not Found and Too Many Requests
         $this->renderable(function (NotFoundHttpException $e, $request) {
             return response()->json([
                 'message' => 'Not found!'
             ], 404);
+        });
+
+        $this->renderable(function (TooManyRequestsHttpException $e, $request) {
+            return response()->json([
+                'message' => 'Too many requests!'
+            ], 429);
         });
     }
 }
