@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Http\Resources\ZipCodeResource;
 use App\Models\ZipCode;
 use Illuminate\Routing\Middleware\ThrottleRequests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 
@@ -86,11 +87,43 @@ class ZipCodeTest extends TestCase
             $resourceAsArray = json_decode($zipCodeResource, true);
 
             // make request
-            $response = $this->get(route('get.zip_code', ['zipCode' => $zipCode]));
+            $response = $this->get(route('get.zip_code', ['zipCode' => $zipCode->zip_code]));
             // assert ok just in case
             $response->assertOk();
             // the API must return the same JSON as the one generated using a resource
             $response->assertExactJson($resourceAsArray);
+        }
+    }
+
+    /**
+     * Test the zip codes route returns the appropriate federal entity name
+     *
+     * @return void
+     */
+    public function test_matching_federal_entity(): void
+    {
+        // This query will fetch a list of federal entities and the zip codes associated to them
+        $federalEntities = DB::table('federal_entities')
+            ->join('municipalities AS m', 'federal_entities.id', '=', 'm.federal_entity_id')
+            ->join('settlements AS s', 'm.id', '=', 's.municipality_id')
+            ->join('zip_codes AS zc', 's.zip_code_id', '=', 'zc.id')
+            ->groupBy('federal_entities.id')->orderByRaw('RAND()')->limit(5)
+            ->select(DB::raw('federal_entities.name, GROUP_CONCAT(DISTINCT zc.zip_code) AS zip_codes'))->get();
+
+        // loop through federal entities
+        foreach ($federalEntities as $federalEntity) {
+            // grab just 20 zip codes per entity
+            $zipCodes = array_slice(explode(',', $federalEntity->zip_codes), 0, 20);
+
+            // loop through zip codes
+            foreach ($zipCodes as $zipCode) {
+                // make request
+                $response = $this->get(route('get.zip_code', ['zipCode' => $zipCode]));
+                // assert ok just in case
+                $response->assertOk();
+                // federal entity name in response must match federal entity name retrieved from db
+                $response->assertJsonPath('federal_entity.name', $federalEntity->name);
+            }
         }
     }
 }
