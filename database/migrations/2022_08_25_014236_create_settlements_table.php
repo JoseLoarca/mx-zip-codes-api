@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('settlement_key');
-            $table->enum('zone_type', ['URBANO', 'RURAL']);
+            $table->enum('zone_type', ['URBANO', 'SEMIURBANO', 'RURAL']);
             $table->foreignId('settlement_type_id')->constrained('settlement_types');
             $table->foreignId('municipality_id')->constrained('municipalities');
-            $table->foreignId('locality_id')->constrained('localities');
+            $table->foreignId('locality_id')->nullable()->constrained('localities')->nullOnDelete();
             $table->foreignId('zip_code_id')->constrained('zip_codes');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
