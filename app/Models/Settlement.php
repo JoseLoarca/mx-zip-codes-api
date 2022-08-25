@@ -50,7 +50,9 @@ class Settlement extends Model
      */
     public function locality(): BelongsTo
     {
-        return $this->belongsTo(Locality::class);
+        return $this->belongsTo(Locality::class)->withDefault([
+            'name' => ''
+        ]);
     }
 
     /**
