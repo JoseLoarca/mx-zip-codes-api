@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Http\Resources\SettlementCollection;
-use App\Http\Resources\SettlementResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
