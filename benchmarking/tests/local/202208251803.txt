@@ -1,0 +1,64 @@
+Enter the API URL: Enter number of zip codes to retrieve: 
+
+********************************************************
+API URl: http://127.0.0.1:8000/api/zip-codes/
+This script will retrieve 20 zip codes from the database.
+Two sets of requests will be made to the API using the retrieved zip codes.
+The first set will only include non-cached results.
+The second set will include cached results.
+********************************************************
+
+
+Starting...
+
+
+Non-cached requests:
+Response time for non-cached request for zip code 48615: 74.87 ms
+Response time for non-cached request for zip code 98982: 26.55 ms
+Response time for non-cached request for zip code 75847: 34.85 ms
+Response time for non-cached request for zip code 55605: 26.76 ms
+Response time for non-cached request for zip code 97446: 23.10 ms
+Response time for non-cached request for zip code 20780: 24.66 ms
+Response time for non-cached request for zip code 38165: 26.48 ms
+Response time for non-cached request for zip code 43335: 20.27 ms
+Response time for non-cached request for zip code 56005: 22.90 ms
+Response time for non-cached request for zip code 81249: 25.70 ms
+Response time for non-cached request for zip code 68708: 24.08 ms
+Response time for non-cached request for zip code 47565: 23.87 ms
+Response time for non-cached request for zip code 76526: 34.74 ms
+Response time for non-cached request for zip code 38357: 26.38 ms
+Response time for non-cached request for zip code 50314: 23.09 ms
+Response time for non-cached request for zip code 75784: 20.11 ms
+Response time for non-cached request for zip code 39112: 19.37 ms
+Response time for non-cached request for zip code 86425: 19.37 ms
+Response time for non-cached request for zip code 62613: 19.42 ms
+Response time for non-cached request for zip code 70437: 20.08 ms
+Non-cached requests complete.
+Average response time for non-cached requests: 26.83 ms
+********************************************************
+Cached requests:
+Response time for cached request for zip code 48615: 10.49 ms
+Response time for cached request for zip code 98982: 11.48 ms
+Response time for cached request for zip code 75847: 10.94 ms
+Response time for cached request for zip code 55605: 11.11 ms
+Response time for cached request for zip code 97446: 12.47 ms
+Response time for cached request for zip code 20780: 12.63 ms
+Response time for cached request for zip code 38165: 11.03 ms
+Response time for cached request for zip code 43335: 12.10 ms
+Response time for cached request for zip code 56005: 10.78 ms
+Response time for cached request for zip code 81249: 10.51 ms
+Response time for cached request for zip code 68708: 10.39 ms
+Response time for cached request for zip code 47565: 10.45 ms
+Response time for cached request for zip code 76526: 10.29 ms
+Response time for cached request for zip code 38357: 11.83 ms
+Response time for cached request for zip code 50314: 26.70 ms
+Response time for cached request for zip code 75784: 14.39 ms
+Response time for cached request for zip code 39112: 11.64 ms
+Response time for cached request for zip code 86425: 12.78 ms
+Response time for cached request for zip code 62613: 11.71 ms
+Response time for cached request for zip code 70437: 11.35 ms
+Cached requests complete.
+Average response time for cached requests: 12.25 ms
+
+
+Improvement of response time: 54.34%

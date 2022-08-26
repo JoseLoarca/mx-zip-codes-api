@@ -1,0 +1,32 @@
+********************************************************
+API URL: http://127.0.0.1:8000/api/zip-codes/
+This script will retrieve 5 zip codes from the database.
+Two sets of requests will be made to the API using the retrieved zip codes.
+The first set will only include non-cached results.
+The second set will include cached results.
+********************************************************
+
+
+Starting...
+
+
+Non-cached requests:
+Response time for non-cached request for zip code 68624: 166.50 ms
+Response time for non-cached request for zip code 74741: 25.65 ms
+Response time for non-cached request for zip code 27613: 30.59 ms
+Response time for non-cached request for zip code 67898: 26.28 ms
+Response time for non-cached request for zip code 88440: 30.49 ms
+Non-cached requests complete.
+Average response time for non-cached requests: 55.90 ms
+********************************************************
+Cached requests:
+Response time for cached request for zip code 68624: 12.97 ms
+Response time for cached request for zip code 74741: 12.78 ms
+Response time for cached request for zip code 27613: 12.01 ms
+Response time for cached request for zip code 67898: 11.60 ms
+Response time for cached request for zip code 88440: 11.50 ms
+Cached requests complete.
+Average response time for cached requests: 12.17 ms
+
+
+Improvement of response time: 78.23%
