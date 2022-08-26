@@ -1,0 +1,42 @@
+********************************************************
+API URl: http://127.0.0.1:8000/api/zip-codes/
+This script will retrieve 10 zip codes from the database.
+Two sets of requests will be made to the API using the retrieved zip codes.
+The first set will only include non-cached results.
+The second set will include cached results.
+********************************************************
+
+
+Starting...
+
+
+Non-cached requests:
+Response time for non-cached request for zip code 93193: 78.04 ms
+Response time for non-cached request for zip code 64000: 28.68 ms
+Response time for non-cached request for zip code 04519: 23.42 ms
+Response time for non-cached request for zip code 50963: 31.65 ms
+Response time for non-cached request for zip code 86853: 23.03 ms
+Response time for non-cached request for zip code 47610: 26.21 ms
+Response time for non-cached request for zip code 75117: 28.71 ms
+Response time for non-cached request for zip code 75058: 27.63 ms
+Response time for non-cached request for zip code 61564: 25.77 ms
+Response time for non-cached request for zip code 80704: 34.42 ms
+Non-cached requests complete.
+Average response time for non-cached requests: 32.76 ms
+********************************************************
+Cached requests:
+Response time for cached request for zip code 93193: 13.02 ms
+Response time for cached request for zip code 64000: 10.59 ms
+Response time for cached request for zip code 04519: 11.04 ms
+Response time for cached request for zip code 50963: 11.77 ms
+Response time for cached request for zip code 86853: 11.12 ms
+Response time for cached request for zip code 47610: 10.93 ms
+Response time for cached request for zip code 75117: 11.11 ms
+Response time for cached request for zip code 75058: 11.43 ms
+Response time for cached request for zip code 61564: 15.02 ms
+Response time for cached request for zip code 80704: 11.06 ms
+Cached requests complete.
+Average response time for cached requests: 11.71 ms
+
+
+Improvement of response time: 64.25%
