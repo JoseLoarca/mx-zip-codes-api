@@ -27,6 +27,7 @@ The development of this API was done following the next steps:
 
 1. **System design**: since the goal is to provide the lowest response time possible, the most appropriate feature
    for this would be cache. For my caching, I chose working with Redis.
+   <a href="https://github.com/JoseLoarca/mx-zip-codes-api/blob/master/IdealArchitecture.png"><img src="https://raw.githubusercontent.com/JoseLoarca/mx-zip-codes-api/master/IdealArchitecture.png" width="400"></a><a href="https://github.com/JoseLoarca/mx-zip-codes-api/blob/master/ZipCodeFlowchart.png"><img src="https://raw.githubusercontent.com/JoseLoarca/mx-zip-codes-api/master/ZipCodeFlowchart.png" width="400"></a>
 2. **Database design**: the database design was based on the demo API
    and [this](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx) source of zip
    codes. This was the most tricky part, since there was little to no explanation on how settlements and localities are
